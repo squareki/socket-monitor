@@ -1,0 +1,13 @@
+CC=gcc
+CFLAGS=-I.
+OBJ = sock_mon.o
+
+all: sock
+
+sock: $(OBJ)
+
+%.o: %.c
+	$(CC) -o $@ $< $(CFLAGS)
+
+clean:
+	rm -rf *.o

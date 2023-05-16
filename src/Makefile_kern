@@ -1,0 +1,12 @@
+KSRC ?= /lib/modules/5.15.0-58-generic/build
+
+KBUILD_EXTRA_SYMBOLS := $(KSRC)/Module.symvers
+
+
+obj-m += kern.o
+
+all:
+	make -C $(KSRC) M=$(PWD) modules
+
+clean:
+	make -C $(KSRC) M=$(PWD) clean
